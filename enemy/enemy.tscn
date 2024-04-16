@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://dr182u3i0jixv"]
+
+[ext_resource type="Script" path="res://enemy/enemy.gd" id="1_ge2vs"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_4nhga"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_hosrs"]
+
+[node name="Enemy" type="CharacterBody3D"]
+script = ExtResource("1_ge2vs")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("CapsuleMesh_4nhga")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_hosrs")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+debug_enabled = true
