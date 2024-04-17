@@ -48,7 +48,7 @@ material = ExtResource("1_n2o7e")
 
 [node name="----- LevelObjects -----" type="Node" parent="NavigationRegion3D"]
 
-[node name="Platform" type="CSGBox3D" parent="NavigationRegion3D/----- LevelObjects -----"]
+[node name="Platform1" type="CSGBox3D" parent="NavigationRegion3D/----- LevelObjects -----"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -16.4945, 0.5, 0.169671)
 use_collision = true
 material = ExtResource("2_k7icp")
