@@ -4,6 +4,8 @@ extends CharacterBody3D
 const SPEED = 5.0
 
 @export var jump_height : float
+@export var max_player_health : int = 100
+
 
 @onready var camera_pivot: Node3D = $CameraPivot
 
@@ -12,6 +14,12 @@ const SPEED = 5.0
 var gravity: float = ProjectSettings.get_setting("physics/3d/default_gravity")
 var mouse_motion = Vector2.ZERO
 
+var player_health : int = max_player_health:
+    set(current_player_health):
+        player_health = current_player_health
+        print(player_health)
+        if player_health <= 0:
+            get_tree().quit()
 
 func _ready() -> void:
     Input.mouse_mode = Input.MOUSE_MODE_CAPTURED

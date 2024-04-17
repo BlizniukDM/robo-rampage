@@ -3,7 +3,9 @@ extends Node3D
 
 @export var fire_rate : float
 @export var recoil : float = 0.05
+@export var player_damage : int = 5
 @export var weapon_mesh : Node3D
+
 
 
 @onready var cooldown: Timer = $Cooldown
@@ -20,6 +22,9 @@ func _process(delta: float) -> void:
 
 
 func shoot() -> void:
+    var collider = ray_cast_3d.get_collider()
     cooldown.start(1.0 / fire_rate)
-    printt("Weapon fired!", ray_cast_3d.get_collider())
+    printt("Weapon fired!", collider)
     weapon_mesh.position.z += recoil
+    if collider is Enemy:
+        collider.enemy_health -= player_damage
