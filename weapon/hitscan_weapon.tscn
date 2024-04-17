@@ -8,3 +8,6 @@ fire_rate = 14.0
 
 [node name="Cooldown" type="Timer" parent="."]
 one_shot = true
+
+[node name="RayCast3D" type="RayCast3D" parent="."]
+target_position = Vector3(2.08165e-12, 2.08165e-12, -100)
